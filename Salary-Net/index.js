@@ -1,10 +1,10 @@
 function calculateTax(grossInCome) {
     let taxAmount = 0;
     if (grossInCome <= 24000) {
-        taxAmount = grossInCome * 0.10; 
-    } else if (grossIncome <= 40000) {
+        taxAmount = grossInCome * 0.10;
+    } else if (grossInCome <= 40000) {
         taxAmount = (grossInCome - 24000) * 0.15 + 2400;
-    } else if (grossIncome <= 60000) {
+    } else if (grossInCome <= 60000) {
         taxAmount = (grossInCome - 40000) * 0.20 + 4800;
     } else {
         taxAmount = (grossInCome - 60000) * 0.30 + 8800;
@@ -12,14 +12,15 @@ function calculateTax(grossInCome) {
 
     return taxAmount;
 }
+
 function calculateNHIFDeduction(grossInCome) {
     let nHIFAmount = 0;
 
     if (grossInCome <= 5999) {
         nHIFAmount = 400;
-    } else if (grossIncome <= 19999) {
+    } else if (grossInCome <= 14999) {
         nHIFAmount = 500;
-    } else if (grossIncome <= 29999) {
+    } else if (grossInCome <= 29999) {
         nHIFAmount = 600;
     } else {
         nHIFAmount = 750;
@@ -45,7 +46,7 @@ function calculateNetIncome(basicSalary, additionalBenefits = 0) {
     return {
         totalIncome: totalIncome,
         tax: tax,
-        nHIFDeduction: nhifDeduction,
+        nHIFDeduction: nHIFDeduction,
         nssfContribution: nssfContribution,
         netIncome: netIncome
     };
